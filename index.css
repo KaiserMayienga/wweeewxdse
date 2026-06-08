@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-ink: #05060a;
+  --color-ink-2: #0b0d14;
+  --color-accent: #22d3ee;
+  --color-accent-2: #a855f7;
+}
+
+html,
+body {
+  background: #05060a;
+  color: #e4e4e7;
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Grid background */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-grid-fine {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Radial glow */
+.glow-radial {
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(34, 211, 238, 0.18) 0%,
+    rgba(168, 85, 247, 0.08) 30%,
+    transparent 60%
+  );
+}
+
+.glow-text {
+  background: linear-gradient(135deg, #22d3ee 0%, #a855f7 60%, #f472b6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animated border gradient */
+.border-gradient {
+  position: relative;
+  background: linear-gradient(#0b0d14, #0b0d14) padding-box,
+    linear-gradient(135deg, rgba(34, 211, 238, 0.5), rgba(168, 85, 247, 0.5)) border-box;
+  border: 1px solid transparent;
+}
+
+/* Ticker scroll */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-ticker {
+  animation: ticker 60s linear infinite;
+}
+
+/* Subtle pulse */
+@keyframes softpulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.animate-softpulse {
+  animation: softpulse 3s ease-in-out infinite;
+}
+
+/* Scan line effect */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.animate-scanline {
+  animation: scanline 4s linear infinite;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
